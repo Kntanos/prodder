@@ -20,7 +20,7 @@ chrome.alarms.onAlarm.addListener(( alarm ) => {
 const displaySomething = () => { 
   chrome.notifications.create('reminder', {
     type: 'basic',
-    iconUrl: 'images/get_started_128.png',
+    iconUrl: 'image.png',
     title: 'Don\'t forget!',
     message: 'Wake up, dude!',
     priority: 2

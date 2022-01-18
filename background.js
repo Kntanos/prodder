@@ -2,7 +2,7 @@ let timer = 0.1
 
 chrome.runtime.onInstalled.addListener(() => {
   chrome.storage.sync.set({ timer });
-  console.log(`Default timer is set to ${timer}`);
+  console.log(`Default prodder time interval is set to ${timer} minute`);
 
   chrome.alarms.create('reminder-alarm', {
     delayInMinutes: timer,
@@ -19,10 +19,9 @@ chrome.alarms.onAlarm.addListener(( alarm ) => {
 });
 
 const displayNotification = () => { 
-  chrome.notifications.create('reminder', {
+  chrome.notifications.create('posture-reminder', {
     type: 'basic',
     iconUrl: 'icon.png',
-    // imageUrl: 'image.png', images do not show on Mac OS X
     title: 'Time to check',
     message: "How's your posture?",
     priority: 2
@@ -30,5 +29,5 @@ const displayNotification = () => {
 }
 
 const clearNotification = () => {
-  chrome.notifications.clear("reminder")
+  chrome.notifications.clear("posture-reminder")
 }

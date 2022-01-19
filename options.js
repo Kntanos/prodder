@@ -7,7 +7,7 @@ const handleOnChange = (event) => {
 
     chrome.storage.sync.set({ timer })
 
-    chrome.runtime.sendMessage({message: "update"});
+    chrome.runtime.sendMessage({message: "change timer"});
   });
   console.log(`Alarm time interval changed to ${event.target.value} minutes`)
 }

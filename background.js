@@ -31,3 +31,6 @@ const displayNotification = () => {
 const clearNotification = () => {
   chrome.notifications.clear("posture-reminder")
 }
+
+chrome.action.setBadgeText({text: 'On'});
+chrome.action.setBadgeBackgroundColor({color: '#4688F1'});

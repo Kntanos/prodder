@@ -1,13 +1,15 @@
-let toggleSwitch = document.getElementById('toggle');
+let onButton = document.getElementById('on');
+let offButton = document.getElementById('off');
 
-const handleClick = () => {
-  if (toggleSwitch.innerText == 'Turn off') {
+const handleClickOff = () => {
     chrome.action.setBadgeText({text: 'Off'});
-    toggleSwitch.innerText = "Turn on"
-  } else {
-    chrome.action.setBadgeText({text: 'On'});
-    toggleSwitch.innerText = "Turn off"
-  }
+    chrome.alarms.clearAll()
 }
 
-toggleSwitch.addEventListener('click', handleClick);
+const handleClickOn = () => {
+    chrome.action.setBadgeText({text: 'On'});
+    chrome.runtime.sendMessage({message: "turn on"});
+  }
+
+onButton.addEventListener('click', handleClickOn);
+offButton.addEventListener('click', handleClickOff);

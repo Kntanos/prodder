@@ -3,10 +3,10 @@ let timer = 0.1 //in minutes
 chrome.runtime.onInstalled.addListener(() => {
   chrome.storage.sync.set({ timer });
   console.log(`Default prodder time interval is set to 0.1 minute`);
-  setTimer()
+  setAlarm()
 });
 
-const setTimer = () => {
+const setAlarm = () => {
 chrome.storage.sync.get(['timer'], (result) => {
   chrome.alarms.create('reminder-alarm', {
     delayInMinutes: result.timer,
@@ -42,8 +42,8 @@ chrome.action.setBadgeBackgroundColor({color: '#4688F1'});
 
 chrome.runtime.onMessage.addListener(
   function(request) {
-    if (request.message === "update")
-      console.log('Receieved a timer update')
-      setTimer();
+    if (request.message === "update" || request.message === "turn on")
+      console.log('Receieved a message')
+      setAlarm();
   }
 );

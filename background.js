@@ -1,14 +1,19 @@
-let timer = 0.1
+let timer = 0.1 //in minutes
 
 chrome.runtime.onInstalled.addListener(() => {
   chrome.storage.sync.set({ timer });
-  console.log(`Default prodder time interval is set to ${timer} minute`);
+  console.log(`Default prodder time interval is set to 0.1 minute`);
+  setTimer()
+});
 
+const setTimer = () => {
+chrome.storage.sync.get(['timer'], (result) => {
   chrome.alarms.create('reminder-alarm', {
-    delayInMinutes: timer,
-    periodInMinutes: 0.1
+    delayInMinutes: result.timer,
+    periodInMinutes: result.timer
   });
 });
+}
 
 chrome.alarms.onAlarm.addListener(( alarm ) => {
   console.log("Got an alarm!", alarm);
@@ -22,8 +27,8 @@ const displayNotification = () => {
   chrome.notifications.create('posture-reminder', {
     type: 'basic',
     iconUrl: 'icon.png',
-    title: 'Time to check',
-    message: "How's your posture?",
+    title: 'Time to check..',
+    message: "How is your posture?",
     priority: 2
   });
 }
@@ -34,3 +39,11 @@ const clearNotification = () => {
 
 chrome.action.setBadgeText({text: 'On'});
 chrome.action.setBadgeBackgroundColor({color: '#4688F1'});
+
+chrome.runtime.onMessage.addListener(
+  function(request) {
+    if (request.message === "update")
+      console.log('Receieved a timer update')
+      setTimer();
+  }
+);

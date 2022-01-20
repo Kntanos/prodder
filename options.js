@@ -1,7 +1,15 @@
 const inputNumber = document.getElementById('minutes');
 const inputText = document.getElementById('text');
 
-const handleOnChange = (event) => {
+chrome.storage.sync.get(['message'], (result) => {
+  inputText.setAttribute("value", result.message)
+  })
+
+chrome.storage.sync.get(['timer'], (result) => {
+  inputNumber.setAttribute("value", result.timer)
+  })
+
+const handleOnInput = (event) => {
   chrome.storage.sync.get(['timer'], (result) => {
     result.timer = event.target.value
     let timer = parseInt(result.timer)
@@ -13,7 +21,7 @@ const handleOnChange = (event) => {
   console.log(`Alarm time interval changed to ${event.target.value} minutes`)
 }
 
-const handleOnInput = (event) => {
+const handleOnChange = (event) => {
   chrome.storage.sync.get(['message'], (result) => {
     result.message = event.target.value
     let message = result.message
@@ -26,5 +34,5 @@ const handleOnInput = (event) => {
 }
 
 
-inputNumber.addEventListener('input', handleOnChange);
-inputText.addEventListener('change', handleOnInput)
+inputNumber.addEventListener('input', handleOnInput);
+inputText.addEventListener('change', handleOnChange)

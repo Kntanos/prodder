@@ -1,19 +1,32 @@
 <!DOCTYPE html>
-<html>
-  <head>
+<html lang="en">
+<head>
+  <link rel="stylesheet" href="options.css">
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   </head>
   <body>
-    <div>
-      <h1>You can customize the Prodder</h1>
+    <div class="flex-container">
+      <h1>Customize your Prodder</h1>
     </div>
-    <div>
-      <h3>Set the timer</h3> 
-      <form>
-        <label>How often do you want to be reminded? (in minutes): <input type="number" min="1" max="180" id="minutes"></label>
-        <br><br>
-        <label>If you want to be prodded about something else, you can change the message here: <input type="text" id="text"></label>
-        <br><br>
-      </form>
+
+    <div class="flex-container">
+        <div>
+          <h3>Set the timer</h3> 
+          <form>
+            <h2>
+            <label>How often do you want to be prodded? (in minutes): <input type="number" value="" min="1" max="300" id="minutes"></label>
+            </h2>
+            <br><br>
+          <h3>Change the message</h3> 
+            <h2>
+            <label>If you want to be prodded about something else, you can change the message here: 
+              <input type="text" value="" id="text" size="50" maxlength="110"> (max 110 characters)</label>
+            </h2>
+            <br><br>
+          </form>
+        </div>
     </div>
   </body>
   <script src="options.js"></script>

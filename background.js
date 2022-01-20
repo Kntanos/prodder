@@ -1,5 +1,5 @@
-let timer = 0.1 //in minutes
-let message = 'How your posture?'
+let timer = 10 //in minutes
+let message = 'How is your posture?'
 
 chrome.runtime.onInstalled.addListener(() => {
   chrome.storage.sync.set({ timer });
@@ -15,6 +15,7 @@ const setAlarm = () => {
       delayInMinutes: result.timer,
       periodInMinutes: result.timer
     });
+    setTimeout(clearNotification, 2000)
   });
 }
 
@@ -31,7 +32,7 @@ const displayNotification = () => {
       chrome.notifications.create('posture-reminder', {
       type: 'basic',
       iconUrl: 'icon.png',
-      title: 'Time to check..',
+      title: 'Time to prod you:',
       message: result.message,
       priority: 2
     });

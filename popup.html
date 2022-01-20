@@ -1,35 +1,27 @@
 <!DOCTYPE html>
 <html lang="en">
-<link
-  href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"
-  rel="stylesheet"
-  integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN"
-  crossorigin="anonymous"
-/>
 <style>
-  /* Modal Structure */
-
   html,
   body {
     font-family: "Open Sans", sans-serif;
     font-size: 14px;
     margin: 0;
-    min-height: 180px;
+    min-height: 100px;
     padding: 0;
-    width: 384px;
+    width: 250px;
   }
 
   h1 {
-    font-family: "Menlo", monospace;
-    font-size: 22px;
+    font-family: "", monospace;
+    font-size: 16px;
     font-weight: 400;
     margin: 0;
-    color: #2f5876;
+    color: #122634;
   }
 
   a:link,
   a:visited {
-    color: #000000;
+    color: #1728df;
     outline: 0;
     text-decoration: none;
   }
@@ -40,7 +32,7 @@
 
   .modal-header {
     align-items: center;
-    border-bottom: 0.5px solid #dadada;
+    border-bottom: 0.5px solid #c21f1f;
   }
 
   .modal-content {
@@ -48,7 +40,7 @@
   }
 
   .modal-icons {
-    border-top: 0.5px solid #dadada;
+    border-top: 0.5px solid #0ea05c;
     height: 50px;
     width: 100%;
   }
@@ -64,28 +56,23 @@
 
   .version {
     color: #444;
-    font-size: 18px;
+    font-size: 12px;
   }
 
   .flex-container {
     display: flex;
     justify-content: space-between;
-    padding: 10px 22px;
+    padding: 10px 30px;
   }
 
   .flex {
     opacity: 1;
     transition: opacity 0.2s ease-in-out;
-    width: 120px;
+    width: 80px;
   }
 
   .flex:hover {
-    opacity: 0.4;
-  }
-
-  .flex .fa {
-    font-size: 40px;
-    color: #2f5876;
+    opacity: 0.8;
   }
 </style>
 
@@ -98,8 +85,8 @@
 <body>
   <div class="modal-header">
     <h1 class="logo">
-      <img class="logo-icon" src="images/traversy-logo.png" />Prodder by <a href="https://github.com/Kntanos" target="_blank">Kntanos</a>
-      <span class="version">(1.0.0)</span>
+      <img class="logo-icon" src="images/get_started32.png" />Prodder by <a href="https://github.com/Kntanos" target="_blank">Kntanos</a>
+      <span class="version">v.1.0</span>
     </h1>
   </div>
   <div class="modal-content">
@@ -109,11 +96,9 @@
     <div class="flex-container">
       <div class="flex">
         <button id="on">Turn on</button>
-        </a>
       </div>
       <div class="flex">
         <button id="off">Turn off</button>
-        </a>
       </div>
     </div>
   </div>

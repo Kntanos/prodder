@@ -43,9 +43,6 @@ const clearNotification = () => {
   chrome.notifications.clear("posture-reminder")
 }
 
-chrome.action.setBadgeText({text: 'On'});
-chrome.action.setBadgeBackgroundColor({color: '#4688F1'});
-
 chrome.runtime.onMessage.addListener(
   (request) => {
     if (request.message === "change timer" || request.message === "turn on")

@@ -1,7 +1,7 @@
  ![prodder_16](https://user-images.githubusercontent.com/86077849/150538493-14f531a1-6bc9-42c7-9f0e-de8864934194.png)
  # Prodder
 
-A Chrome extenion designed to prod users that spend a lot of time in front of the computer, to check their posture and sit up to avoid shoulder and neck pain.
+A Chrome extenion designed to prod users that spend a lot of time in front of the computer to check their posture and sit up to avoid shoulder and neck pain.
 
 <img width="353" alt="Screen Shot 2022-01-21 at 11 25 32 am" src="https://user-images.githubusercontent.com/86077849/150539196-e5c64187-1070-41c5-bffd-ee06ae364226.png">
 

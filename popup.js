@@ -4,8 +4,8 @@ let offButton = document.getElementById('off');
 const handleClickOff = () => {
     chrome.action.setBadgeText({text: 'Off'});
     chrome.action.setBadgeBackgroundColor({color: '#9a0a31'});
-    chrome.alarms.clearAll()
-}
+    chrome.alarms.clearAll();
+  }
 
 const handleClickOn = () => {
     chrome.action.setBadgeText({text: ''});

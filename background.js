@@ -6,7 +6,7 @@ chrome.runtime.onInstalled.addListener(() => {
   chrome.storage.sync.set({ message });
   console.log(`Default prodder time interval is set to ${timer} minutes`);
   console.log(`Default prodder message is set to: ${message}`);
-  setAlarm()
+  setAlarm();
 });
 
 const setAlarm = () => {
@@ -15,16 +15,16 @@ const setAlarm = () => {
       delayInMinutes: result.timer,
       periodInMinutes: result.timer
     });
-    setTimeout(clearNotification, 2000)
+    setTimeout(clearNotification, 2000);
   });
-}
+};
 
 chrome.alarms.onAlarm.addListener(( alarm ) => {
   console.log("Got an alarm!", alarm);
   if (alarm.name === 'reminder-alarm') {
-    displayNotification()
-    setTimeout(clearNotification, 2000)
-  } 
+    displayNotification();
+    setTimeout(clearNotification, 2000);
+  };
 });
 
 const displayNotification = () => { 
@@ -37,7 +37,7 @@ const displayNotification = () => {
       priority: 2
     });
   });
-}
+};
 
 const clearNotification = () => {
   chrome.notifications.clear("posture-reminder")

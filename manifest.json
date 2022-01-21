@@ -1,6 +1,6 @@
 {
   "name": "Prodder",
-  "description": "Set a periodic prod to check on your posture or anything else you need to be prodded to",
+  "description": "Sets a periodic prod to check on your posture or anything else you need prodding for",
   "version": "1.0.0",
   "manifest_version": 3,
   "background": {
